@@ -9,7 +9,7 @@
 <div class="container mt-5">
     <h2 class="mb-4">➕ Tambah Siswa</h2>
 
-    <form action="{{ route('siswa.store') }}" method="POST">
+    <form action="{{ route('students.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
@@ -28,7 +28,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Simpan</button>
-        <a href="{{ route('siswa.index') }}" class="btn btn-secondary">Kembali</a>
+        <a href="{{ route('students.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
 

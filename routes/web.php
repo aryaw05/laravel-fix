@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\StudentController;
 
-Route::resource('siswa', SiswaController::class);
+Route::resource('students', StudentController::class);
 
 Route::get('/', function () {
     return view('welcome');

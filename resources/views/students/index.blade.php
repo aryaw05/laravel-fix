@@ -13,12 +13,11 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <a href="{{ route('siswa.create') }}" class="btn btn-primary mb-3">+ Tambah Siswa</a>
+    <a href="{{ route('students.create') }}" class="btn btn-primary mb-3">+ Tambah Siswa</a>
 
     <table class="table table-bordered">
         <thead>
             <tr class="text-center">
-                <th>ID</th>
                 <th>Nama</th>
                 <th>Kelas</th>
                 <th>Jurusan</th>
@@ -26,16 +25,15 @@
             </tr>
         </thead>
         <tbody>
-            @forelse($siswas as $siswa)
+            @forelse($students as $student)
             <tr>
-                <td class="text-center">{{ $siswa->id }}</td>
-                <td>{{ $siswa->nama }}</td>
-                <td>{{ $siswa->kelas }}</td>
-                <td>{{ $siswa->jurusan }}</td>
+                <td>{{ $student->nama }}</td>
+                <td>{{ $student->kelas }}</td>
+                <td>{{ $student->jurusan }}</td>
                 <td class="text-center">
-                    <a href="{{ route('siswa.edit', $siswa->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
-                    <form action="{{ route('siswa.destroy', $siswa->id) }}" method="POST" style="display:inline-block;">
+                    <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline-block;">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin hapus?')">Hapus</button>
